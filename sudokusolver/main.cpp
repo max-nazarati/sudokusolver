@@ -7,9 +7,14 @@
 //
 
 #include <iostream>
+#include <fstream>
+#include "./parser/parser.hpp"
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char * argv[])
+{
     // insert code here...
-    std::cout << "Hello, World!\n";
+    std::ifstream f;
+    f.open("random.txt");
+    parseSudokuFile(&f);
     return 0;
 }
