@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
 #include <string>
-
-std::vector<std::vector<int>> readFile(std::string filename);
+class Reader{
+    public:
+        std::vector<std::vector<int>> readFile(std::string filename);
+};

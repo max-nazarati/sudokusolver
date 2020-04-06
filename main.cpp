@@ -3,7 +3,7 @@
 #include "./reader.h"
 
 int main(int argc, char** argv){
-    std::vector<std::vector<int>> board = readFile("tstfile");
+    std::vector<std::vector<int>> board = Reader().readFile("tstfile");
     std::for_each(board.begin(), board.end(),
         [](std::vector<int> row)
         {

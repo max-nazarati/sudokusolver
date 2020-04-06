@@ -4,7 +4,7 @@
 #include <string>
 #include "./reader.h"
 
-std::vector<std::vector<int>> readFile(std::string filename){
+std::vector<std::vector<int>> Reader::readFile(std::string filename){
     std::vector<std::vector<int>> sudokuBoard;
     std::ifstream file(filename);
     if (file.is_open()){
