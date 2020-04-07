@@ -2,20 +2,33 @@
 #include <vector>
 #include <iostream>
 
-using std::vector;
-using std::cout;
+using namespace std;
 
 Solver::Solver(vector<vector<int>> *board)
 {
     mboard = board;
 }
 
+void Solver::printBoard()
+{
+    for (vector<int> row : (*mboard))
+    {
+        for (int val : row)
+        {
+            cout << val;
+        }
+        cout << endl;
+    }
+    cout << "---------------------------------------" << endl;
+}
 bool Solver::checkRow(int val, int row, int col)
 {
-    for (int i = 0; i < mboard[row].size(); i++)
+    for (int i = 0; i < (*mboard)[row].size(); i++)
     {
-        if (mboard->at(row).at(i) == val && i != col)
+        if ((*mboard)[row][i] == val && i != col)
+        {
             return false;
+        }
     }
     return true;
 }
@@ -25,7 +38,9 @@ bool Solver::checkCol(int val, int row, int col)
     for (int i = 0; i < mboard->size(); i++)
     {
         if ((*mboard)[i][col] == val && i != row)
+        {
             return false;
+        }
     }
     return true;
 }
@@ -66,16 +81,19 @@ bool Solver::checkSquare(int val, int row, int col)
     {
         for (int j = 0; j < 3; j++)
         {
-            if ((*mboard)[i][j] == val && i == row && j == col)
+            if ((*mboard)[squareOriginRow + i][squareOriginCol + j] == val && 
+            squareOriginRow + i == row && squareOriginCol + j == col)
+            {
                 return false;
+            }
         }
     }
     return true;
 }
 
-bool Solver::solved(std::vector<std::vector<int>> board)
+bool Solver::solved()
 {
-    for (std::vector<int> row : board)
+    for (std::vector<int> row : (*mboard))
     {
         for (int cell : row)
         {
@@ -86,8 +104,47 @@ bool Solver::solved(std::vector<std::vector<int>> board)
     return true;
 }
 
-std::vector<std::vector<int>> Solver::solve(std::vector<std::vector<int>> board)
+bool Solver::solve()
 {
-    
-    return std::vector<std::vector<int>>();
+    for (int row = 0; row < mboard->size(); row++)
+    {
+        for (int col = 0; col < mboard->size(); col++)
+        {
+            if ((*mboard)[row][col] != 0)
+                {
+                    continue;
+                }
+            for (int candidate = 1; candidate < 10; candidate++)
+            {
+                if (this->checkRow(candidate, row, col) && this->checkCol(candidate, row, col)
+                        && this->checkSquare(candidate, row, col))
+                {
+                    (*mboard)[row][col] = candidate;
+                    if (this->solved())
+                    {
+                        return true;
+                    }
+
+                    // recursive call to find next piece of the solution
+                    else if (this->solve())
+                    {
+                        return true;
+                    }
+                    // Backtracking; current candidate value doesn't allow for future placements, 
+                    // so try next candidate
+                    else
+                    {
+                        (*mboard)[row][col] = 0;
+                    }
+                }
+                else if (candidate == 9)
+                {
+                    return false;
+                }
+                
+            }
+            return false;
+        }
+    }
+    return false;
 }
