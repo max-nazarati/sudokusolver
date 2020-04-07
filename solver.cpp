@@ -137,6 +137,7 @@ bool Solver::solve()
                         (*mboard)[row][col] = 0;
                     }
                 }
+                //  Backtracking; exhausted all possibilites for the current cell
                 else if (candidate == 9)
                 {
                     return false;
