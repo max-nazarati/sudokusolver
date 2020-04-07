@@ -10,7 +10,6 @@ Solver::Solver(vector<vector<int>> *board)
     mboard = board;
 }
 
-
 bool Solver::checkRow(int val, int row, int col)
 {
     for (int i = 0; i < mboard[row].size(); i++)
@@ -21,15 +20,12 @@ bool Solver::checkRow(int val, int row, int col)
     return true;
 }
 
-
 bool Solver::checkCol(int val, int row, int col)
 {
     for (int i = 0; i < mboard->size(); i++)
     {
         if ((*mboard)[i][col] == val && i != row)
-        {
             return false;
-        }
     }
     return true;
 }
@@ -61,7 +57,6 @@ int Solver::squareOriginCol(int col)
     return 6; 
 }
 
-
 bool Solver::checkSquare(int val, int row, int col)
 {
     int squareOriginRow = this->squareOriginRow(row);
@@ -78,7 +73,6 @@ bool Solver::checkSquare(int val, int row, int col)
     return true;
 }
 
-
 bool Solver::solved(std::vector<std::vector<int>> board)
 {
     for (std::vector<int> row : board)
@@ -91,7 +85,6 @@ bool Solver::solved(std::vector<std::vector<int>> board)
     }
     return true;
 }
-
 
 std::vector<std::vector<int>> Solver::solve(std::vector<std::vector<int>> board)
 {
