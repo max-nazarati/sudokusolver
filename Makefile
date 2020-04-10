@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named t
+
+# Build rule for target.
+t : cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 t
+.PHONY : t
+
+# fast build rule for target.
+t/fast:
+	$(MAKE) -f CMakeFiles/t.dir/build.make CMakeFiles/t.dir/build
+.PHONY : t/fast
+
+#=============================================================================
 # Target rules for targets named solver
 
 # Build rule for target.
@@ -163,6 +176,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/solver.dir/build.make CMakeFiles/solver.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test/mainTest.o: test/mainTest.cpp.o
+
+.PHONY : test/mainTest.o
+
+# target to build an object file
+test/mainTest.cpp.o:
+	$(MAKE) -f CMakeFiles/t.dir/build.make CMakeFiles/t.dir/test/mainTest.cpp.o
+.PHONY : test/mainTest.cpp.o
+
+test/mainTest.i: test/mainTest.cpp.i
+
+.PHONY : test/mainTest.i
+
+# target to preprocess a source file
+test/mainTest.cpp.i:
+	$(MAKE) -f CMakeFiles/t.dir/build.make CMakeFiles/t.dir/test/mainTest.cpp.i
+.PHONY : test/mainTest.cpp.i
+
+test/mainTest.s: test/mainTest.cpp.s
+
+.PHONY : test/mainTest.s
+
+# target to generate assembly for a file
+test/mainTest.cpp.s:
+	$(MAKE) -f CMakeFiles/t.dir/build.make CMakeFiles/t.dir/test/mainTest.cpp.s
+.PHONY : test/mainTest.cpp.s
+
+test/solverTest.o: test/solverTest.cpp.o
+
+.PHONY : test/solverTest.o
+
+# target to build an object file
+test/solverTest.cpp.o:
+	$(MAKE) -f CMakeFiles/t.dir/build.make CMakeFiles/t.dir/test/solverTest.cpp.o
+.PHONY : test/solverTest.cpp.o
+
+test/solverTest.i: test/solverTest.cpp.i
+
+.PHONY : test/solverTest.i
+
+# target to preprocess a source file
+test/solverTest.cpp.i:
+	$(MAKE) -f CMakeFiles/t.dir/build.make CMakeFiles/t.dir/test/solverTest.cpp.i
+.PHONY : test/solverTest.cpp.i
+
+test/solverTest.s: test/solverTest.cpp.s
+
+.PHONY : test/solverTest.s
+
+# target to generate assembly for a file
+test/solverTest.cpp.s:
+	$(MAKE) -f CMakeFiles/t.dir/build.make CMakeFiles/t.dir/test/solverTest.cpp.s
+.PHONY : test/solverTest.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -171,11 +238,18 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... t"
 	@echo "... solver"
 	@echo "... source"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test/mainTest.o"
+	@echo "... test/mainTest.i"
+	@echo "... test/mainTest.s"
+	@echo "... test/solverTest.o"
+	@echo "... test/solverTest.i"
+	@echo "... test/solverTest.s"
 .PHONY : help
 
 

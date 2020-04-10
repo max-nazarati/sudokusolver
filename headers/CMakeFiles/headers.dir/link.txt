@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libheaders.a  
-/Library/Developer/CommandLineTools/usr/bin/ranlib libheaders.a

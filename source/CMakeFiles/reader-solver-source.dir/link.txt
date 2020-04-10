@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libreader-solver-source.a  CMakeFiles/reader-solver-source.dir/reader.cpp.o CMakeFiles/reader-solver-source.dir/solver.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libreader-solver-source.a
