@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/maximiliannazarati/Projects/sudokusolver/headers/reader.hpp
+vector
+-
+string
+-
+
+/Users/maximiliannazarati/Projects/sudokusolver/headers/solver.hpp
+vector
+-
+
+/Users/maximiliannazarati/Projects/sudokusolver/source/reader.cpp
+fstream
+-
+iostream
+-
+vector
+-
+string
+-
+../headers/reader.hpp
+/Users/maximiliannazarati/Projects/sudokusolver/headers/reader.hpp
+
+/Users/maximiliannazarati/Projects/sudokusolver/source/solver.cpp
+../headers/solver.hpp
+/Users/maximiliannazarati/Projects/sudokusolver/headers/solver.hpp
+vector
+-
+iostream
+-
+

@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maximiliannazarati/Projects/sudokusolver/CMakeFiles /Users/maximiliannazarati/Projects/sudokusolver/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(CMAKE_COMMAND) -E cmake_progress_start /Users/maximiliannazarati/Projects/sudokusolver/CMakeFiles /Users/maximiliannazarati/Projects/sudokusolver/source/CMakeFiles/progress.marks
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f CMakeFiles/Makefile2 source/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/maximiliannazarati/Projects/sudokusolver/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f CMakeFiles/Makefile2 source/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,71 +97,87 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f CMakeFiles/Makefile2 source/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f CMakeFiles/Makefile2 source/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named solver
+# Convenience name for target.
+source/CMakeFiles/source.dir/rule:
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f CMakeFiles/Makefile2 source/CMakeFiles/source.dir/rule
+.PHONY : source/CMakeFiles/source.dir/rule
 
-# Build rule for target.
-solver: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 solver
-.PHONY : solver
+# Convenience name for target.
+source: source/CMakeFiles/source.dir/rule
 
-# fast build rule for target.
-solver/fast:
-	$(MAKE) -f CMakeFiles/solver.dir/build.make CMakeFiles/solver.dir/build
-.PHONY : solver/fast
-
-#=============================================================================
-# Target rules for targets named source
-
-# Build rule for target.
-source: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 source
 .PHONY : source
 
 # fast build rule for target.
 source/fast:
-	$(MAKE) -f source/CMakeFiles/source.dir/build.make source/CMakeFiles/source.dir/build
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f source/CMakeFiles/source.dir/build.make source/CMakeFiles/source.dir/build
 .PHONY : source/fast
 
-main.o: main.cpp.o
+reader.o: reader.cpp.o
 
-.PHONY : main.o
+.PHONY : reader.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/solver.dir/build.make CMakeFiles/solver.dir/main.cpp.o
-.PHONY : main.cpp.o
+reader.cpp.o:
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f source/CMakeFiles/source.dir/build.make source/CMakeFiles/source.dir/reader.cpp.o
+.PHONY : reader.cpp.o
 
-main.i: main.cpp.i
+reader.i: reader.cpp.i
 
-.PHONY : main.i
+.PHONY : reader.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/solver.dir/build.make CMakeFiles/solver.dir/main.cpp.i
-.PHONY : main.cpp.i
+reader.cpp.i:
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f source/CMakeFiles/source.dir/build.make source/CMakeFiles/source.dir/reader.cpp.i
+.PHONY : reader.cpp.i
 
-main.s: main.cpp.s
+reader.s: reader.cpp.s
 
-.PHONY : main.s
+.PHONY : reader.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/solver.dir/build.make CMakeFiles/solver.dir/main.cpp.s
-.PHONY : main.cpp.s
+reader.cpp.s:
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f source/CMakeFiles/source.dir/build.make source/CMakeFiles/source.dir/reader.cpp.s
+.PHONY : reader.cpp.s
+
+solver.o: solver.cpp.o
+
+.PHONY : solver.o
+
+# target to build an object file
+solver.cpp.o:
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f source/CMakeFiles/source.dir/build.make source/CMakeFiles/source.dir/solver.cpp.o
+.PHONY : solver.cpp.o
+
+solver.i: solver.cpp.i
+
+.PHONY : solver.i
+
+# target to preprocess a source file
+solver.cpp.i:
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f source/CMakeFiles/source.dir/build.make source/CMakeFiles/source.dir/solver.cpp.i
+.PHONY : solver.cpp.i
+
+solver.s: solver.cpp.s
+
+.PHONY : solver.s
+
+# target to generate assembly for a file
+solver.cpp.s:
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(MAKE) -f source/CMakeFiles/source.dir/build.make source/CMakeFiles/source.dir/solver.cpp.s
+.PHONY : solver.cpp.s
 
 # Help Target
 help:
@@ -171,11 +187,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... solver"
 	@echo "... source"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... reader.o"
+	@echo "... reader.i"
+	@echo "... reader.s"
+	@echo "... solver.o"
+	@echo "... solver.i"
+	@echo "... solver.s"
 .PHONY : help
 
 
@@ -187,6 +205,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/maximiliannazarati/Projects/sudokusolver && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

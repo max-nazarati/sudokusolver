@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "./reader.h"
-#include "./solver.h"
+#include "./headers/reader.hpp"
+#include "./headers/solver.hpp"
 
 int main(int argc, char** argv){
     std::vector<std::vector<int>> board = Reader().readFile("tstfile");

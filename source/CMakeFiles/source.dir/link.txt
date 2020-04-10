@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libsource.a  CMakeFiles/source.dir/reader.cpp.o CMakeFiles/source.dir/solver.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libsource.a

@@ -1,4 +1,4 @@
-#include "./solver.h"
+#include "../headers/solver.hpp"
 #include <vector>
 #include <iostream>
 

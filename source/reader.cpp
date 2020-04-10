@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "./reader.h"
+#include "../headers/reader.hpp"
 
 std::vector<std::vector<int>> Reader::readFile(std::string filename){
     std::vector<std::vector<int>> sudokuBoard;

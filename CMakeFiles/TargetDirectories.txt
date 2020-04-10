@@ -1,0 +1,8 @@
+/Users/maximiliannazarati/Projects/sudokusolver/CMakeFiles/rebuild_cache.dir
+/Users/maximiliannazarati/Projects/sudokusolver/CMakeFiles/edit_cache.dir
+/Users/maximiliannazarati/Projects/sudokusolver/CMakeFiles/solver.dir
+/Users/maximiliannazarati/Projects/sudokusolver/headers/CMakeFiles/rebuild_cache.dir
+/Users/maximiliannazarati/Projects/sudokusolver/headers/CMakeFiles/edit_cache.dir
+/Users/maximiliannazarati/Projects/sudokusolver/source/CMakeFiles/rebuild_cache.dir
+/Users/maximiliannazarati/Projects/sudokusolver/source/CMakeFiles/edit_cache.dir
+/Users/maximiliannazarati/Projects/sudokusolver/source/CMakeFiles/source.dir
